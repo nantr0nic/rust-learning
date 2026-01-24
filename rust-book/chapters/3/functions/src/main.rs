@@ -23,8 +23,22 @@ fn main() {
     };
     println!("a is {a}");
     
+    println!("3? -> {}", f(g(1))); // should return 3
+    println!("5? -> {}", {
+        let x: i32 = 3;
+        f(g(x))
+    })
+    
 }
 
 fn print_labeled_measurement(value: i32, unit_label: char) {
     println!("The measurement is: {value}{unit_label}");
+}
+
+fn f(x: i32) -> i32 {
+    x + 1
+}
+
+fn g(x: i32) -> i32 {
+    x + 1
 }
